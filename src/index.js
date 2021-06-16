@@ -21,28 +21,31 @@ app.use(express.static(staticPath));
 
 // Setting-up routes
 app.get("/", (req, res) => {
-  requests(
-    `http://api.openweathermap.org/data/2.5/weather?q=${req.query.city}&appid=51ddb5900aa0c587290765cefd31ff38`
-  )
-    // On data
-    .on("data", (chunk) => {
-      const data = JSON.parse(chunk);
-      console.log(data);
+  if (req.query.city) {
+    requests(
+      `http://api.openweathermap.org/data/2.5/weather?q=${req.query.city}&appid=51ddb5900aa0c587290765cefd31ff38`
+    )
+      // On data
+      .on("data", (chunk) => {
+        const data = JSON.parse(chunk);
+        console.log(data);
 
-      res.render("index", {
-        tempVal: `${Math.round(data.main.temp - 273.15)} °C`,
-        tempMin: `${Math.round(data.main.temp_min - 273.15)} °C`,
-        tempMax: `${Math.round(data.main.temp_max - 273.15)} °C`,
-        location: data.name,
-        country: data.sys.country,
-        tempStatus: data.weather[0].main,
+        res.render("index", {
+          tempVal: `${Math.round(data.main.temp - 273.15)} °C`,
+          tempMin: `${Math.round(data.main.temp_min - 273.15)} °C`,
+          tempMax: `${Math.round(data.main.temp_max - 273.15)} °C`,
+          location: data.name,
+          country: data.sys.country,
+          tempStatus: data.weather[0].main,
+        });
+      })
+      // On end
+      .on("end", (err) => {
+        err ? console.log("connection closed due to errors", err) : null;
       });
-    })
-    // On end
-    .on("end", (err) => {
-      err ? console.log("connection closed due to errors", err) : null;
-      // res.end();
-    });
+  } else {
+    res.render("start");
+  }
 });
 
 app.get('*', (req, res) => {

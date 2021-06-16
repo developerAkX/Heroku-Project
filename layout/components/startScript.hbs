@@ -1,0 +1,57 @@
+<script>
+    const curDate = document.querySelector('#date');
+    let WeatherIcon = document.querySelector("#Weather_icon");
+    let SearchForm = document.querySelector("#Search_form");
+    let SearchInput = document.querySelector("#Search_input");
+
+    const tempStatus = "{{ tempStatus }}"
+    const getCurrentDay = () => {
+        const currentTime = new Date();
+        let weekday = new Array(7);
+        weekday[0] = "Sun";
+        weekday[1] = "Mon";
+        weekday[2] = "Tue";
+        weekday[3] = "Wed";
+        weekday[4] = "Thu";
+        weekday[5] = "Fri";
+        weekday[6] = "Sat";
+
+        const Day = weekday[currentTime.getDay()];
+        return Day
+    };
+
+    const getCurrentTime = () => {
+        const currentTime = new Date();
+
+        let months = new Array(12)
+        months[0] = 'Jan';
+        months[1] = 'Feb';
+        months[2] = 'Mar';
+        months[3] = 'Apr';
+        months[4] = 'May';
+        months[5] = 'Jun';
+        months[6] = 'Jul';
+        months[7] = 'Aug';
+        months[8] = 'Sep';
+        months[9] = 'Oct';
+        months[10] = 'Nov';
+        months[11] = 'Dec';
+
+        const month = months[currentTime.getMonth()];
+        const date = currentTime.getDate();
+
+        let hours = currentTime.getHours();
+        let mins = currentTime.getMinutes();
+        let period = (hours > 11) ? "PM" : "AM";
+        (hours > 12) ? hours -= 12 : null
+        mins = (mins < 10) ? 0 + mins : mins
+
+        return `${getCurrentDay()} | ${month} ${date} | ${hours}:${mins}${period}`;
+    };
+    curDate.innerText = getCurrentTime()
+    SearchForm.addEventListener("submit", (event) => {
+        event.preventDefault()
+        console.log(SearchInput.value, "value");
+        window.location.replace(`http://localhost:8000/?city=${SearchInput.value}`)
+    });
+</script>
