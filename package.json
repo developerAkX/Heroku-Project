@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Ayush Kumar Singh",
   "license": "MIT",
+  "scripts": {
+    "start": "node src/app.js"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.1.2",
