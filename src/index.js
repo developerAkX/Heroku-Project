@@ -52,7 +52,7 @@ app.get("/", (req, res) => {
     getWeatherReport(req.query.city);
   else {
     console.log(404, "render");
-    res.render("404start", { city: req.query.city })
+    res.render("start")
   }
 });
 
