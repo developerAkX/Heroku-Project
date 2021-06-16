@@ -1,0 +1,105 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Maven Pro", sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(32, 32, 32);
+}
+
+#weava-permanent-marker {
+  display: none;
+}
+
+#weava-ui-wrapper {
+  display: none;
+}
+
+#Search_form {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+#Search_input {
+  font-size: 19px;
+  background: #128ce465;
+  color: #b7e1ff;
+  padding: 7px;
+  border: 0px;
+  border-radius: 12px;
+  padding-left: 15px;
+  outline: 0px;
+}
+#Search_input::placeholder {
+  font-size: 19px;
+  /* background: #128ce465; */
+  color: #b7e1ff9c;
+  /* padding: 7px;
+  border: 0px;
+  border-radius: 12px;
+  padding-left: 15px; */
+}
+
+.box {
+  border-radius: 20px;
+  box-shadow: 3px 3px 24px rgba(0, 0, 0, 0.37);
+  padding: 25px;
+  height: 400px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+#Weather_icon {
+  height: 200px;
+  display: grid;
+  place-items: center;
+  margin-bottom: auto;
+}
+
+.temp {
+  color: #128ce4;
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.location {
+  letter-spacing: 1.5px;
+  font-size: 27px;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+#date {
+  margin-top: 0.6rem;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #b7e1ff9c;
+}
+
+.temp_min_max {
+  margin-top: 0.4rem;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #b7e1ff9c;
+}
+
+.info {
+  letter-spacing: 0.5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 150px;
+  color: #128ce4d7;
+}

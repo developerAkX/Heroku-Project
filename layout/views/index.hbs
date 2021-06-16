@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;627;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="box">
+        <form id="Search_form">
+            <input id="Search_input" type="text" placeholder="Search Your City...">
+        </form>
+        <div id="Weather_icon">
+            <i class="far fa-sun" style="color: #eccc68; font-size: 60;"></i>
+        </div>
+
+        <div class="info">
+            <h1 class="temp">{{tempVal}}</h1>
+            <p class="location">
+                <i class="fas fa-street-view" style="color: #128ce4d7;"></i>
+                {{location}}, {{country}}
+            </p>
+            <p id="date"></p>
+            <small class="temp_min_max">Min {{tempMin}} | Max {{tempMax}}</small>
+        </div>
+
+        <div class="wave -one"></div>
+
+    </div>
+
+    {{>script}}
+</body>
+
+</html>

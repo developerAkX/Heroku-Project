@@ -1,0 +1,13 @@
+{
+  "name": "express-js-weather-app",
+  "version": "1.0.0",
+  "description": "Practice set 1 Weather App with expressjs and handle bars",
+  "main": "index.js",
+  "author": "Ayush Kumar Singh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "requests": "^0.3.0"
+  }
+}
