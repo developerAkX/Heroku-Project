@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;627;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="box ">
+        <div id="Weather_icon" style="height: 170px;">
+            <i class="fas fa-cloud" style="color: #128ce465; font-size: 80;"></i>
+        </div>
+
+        <form id="Search_form">
+            <input id="Search_input" type="text" placeholder="Search Your City...">
+        </form>
+
+        <div class="info" id="errorBox">
+            <p id="error">{{city}} city not found.</p>
+            <p id="error2">Please search again !</p>
+            <p class="location" style="margin-bottom: 10px; margin-top: 10px;">
+                <i class="fas fa-street-view" style="color: #128ce4d7; font-size: 60;"></i>
+            </p>
+            <p id="date">{{city}} city not found.<br>Please search again~</p>
+        </div>
+    </div>
+    {{>startScript}}
+</body>
+
+</html>

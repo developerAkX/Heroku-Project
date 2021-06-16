@@ -85,6 +85,25 @@ body {
   color: #b7e1ff9c;
 }
 
+#errorBox {
+  height: 190px;
+}
+
+#error {
+  margin-top: 1rem;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #b7e1ff9c;
+}
+#error2 {
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #b7e1ff9c;
+}
 .temp_min_max {
   margin-top: 0.4rem;
   font-size: 12px;
